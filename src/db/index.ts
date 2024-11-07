@@ -19,14 +19,14 @@ const interceptors = [
 
 const db = createPool(process.env.DB_URL!, {
   interceptors,
-  ssl:
-    process.env.NODE_ENV === "development"
-      ? {
-          rejectUnauthorized: false,
-        }
-      : {
-          rejectUnauthorized: true,
-        },
+  ssl: false,
+  // process.env.NODE_ENV === "development"
+  //   ? {
+  //       rejectUnauthorized: false,
+  //     }
+  //   : {
+  //       rejectUnauthorized: true,
+  //     },
 });
 
 console.log("db pool created");
